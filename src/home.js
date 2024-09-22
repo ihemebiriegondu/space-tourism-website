@@ -30,7 +30,7 @@ export default function Home() {
     >
       <section className="flex lg:flex-row flex-col items-center md:justify-between justify-center h-full lg:gap-y-0 md:gap-y-16 gap-y-32 2xl:ps-32 xl:ps-24 sm:ps-10 ps-7 2xl:pe-20 sm:pe-10 pe-7 lg:pt-44 md:pt-0 sm:pt-32 pt-16 lg:mt-0">
         <div className="lg:basis-1/2 lg:text-start text-center lg:w-1/2 md:w-3/4 w-auto lg:pt-44 sm:pt-56 pt-40 xl:mb-0 sm:mb-6">
-          <h3 className="uppercase font-barlowCondensed sm:text-3xl text-base leading-normal tracking-[.25em] sm:mb-0 mb-2.5">
+          <h3 className="uppercase font-barlowCondensed sm:text-3xl text-base leading-normal tracking-widee sm:mb-0 mb-2.5">
             SO, YOU WANT TO TRAVEL TO
           </h3>
           <h1 className="uppercase font-bellefair sm:text-10xl text-7.5xl leading-normal tracking-normal sm:mb-0 mb-4">

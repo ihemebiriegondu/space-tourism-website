@@ -25,13 +25,18 @@ module.exports = {
         'techbg-mobile': "url('/src/assets/technology/background-technology-mobile.jpg')",
       },
       colors: {
-        'primary': '#0B0D17'
+        'primary': '#0B0D17',
+        'secondary':  '#D0D6F9'
       },
       fontSize: {
         '10xl': '9em',
         '7.5xl': '5em',
         'xbase': '1.125em',
         'sbase': '0.9375em'
+      },
+      letterSpacing: {
+        'widee': '0.25em',
+        'widestt' : '0.125em'
       },
       boxShadow: {
         'bigExplore': '0 0 0 90px rgba(255, 255, 255, 0.1)',

@@ -71,7 +71,7 @@ export default function MobileOffcanvas({ showNavbar, setShowNavbar }) {
               </Link>
 
               <motion.div
-                className="bg-white w-0.5"
+                className="bg-white w-1"
                 initial={{ height: 0 }}
                 animate={{
                   height: link.path === location.pathname ? 24 : 0,

@@ -47,7 +47,7 @@ export default function Nav({ setShowNavbar }) {
             <motion.div
               className={`mt-9 ${
                 link.path === location.pathname ? "bg-white" : "bg-white/50"
-              } h-0.5`}
+              } h-1`}
               initial={{ width: 0 }}
               animate={{
                 width:
