@@ -5,7 +5,7 @@ module.exports = {
       fontFamily: {
         barlowCondensed: ["Barlow Condensed", "sans-serif"],
         barlow: ["Barlow", "sans-serif"],
-        bellefair: ["Bellefair", "sans-serif"],
+        bellefair: ["Bellefair", "serif"],
       },
       backgroundImage: {
         'homebg-desktop': "url('/src/assets/home/background-home-desktop.jpg')",
@@ -24,8 +24,14 @@ module.exports = {
         'techbg-tablet': "url('/src/assets/technology/background-technology-tablet.jpg')",
         'techbg-mobile': "url('/src/assets/technology/background-technology-mobile.jpg')",
       },
-      color: {
+      colors: {
         'primary': '#0B0D17'
+      },
+      fontSize: {
+        '10xl': '9em',
+        '7.5xl': '5em',
+        'xbase': '1.125em',
+        'sbase': '0.9375em'
       }
     },
   },

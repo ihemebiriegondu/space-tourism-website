@@ -17,7 +17,7 @@ export default function Nav({ setShowNavbar }) {
   return (
     <nav className="flex flex-row justify-between items-center lg:gap-0 md:gap-10 gap-0 lg:pt-10 md:p-0 p-6 text-white absolute top-0 w-full z-10">
       <div className="lg:ps-16 md:ps-10 lg:grow flex flex-row items-center gap-x-16">
-        <div className="w-12 h-12">
+        <div className="sm:w-12 w-10 sm:h-12 h-10">
           <img
             src={logo}
             alt="logo"
