@@ -32,6 +32,10 @@ module.exports = {
         '7.5xl': '5em',
         'xbase': '1.125em',
         'sbase': '0.9375em'
+      },
+      boxShadow: {
+        'bigExplore': '0 0 0 90px rgba(255, 255, 255, 0.1)',
+        'smallExplore': '0 0 0 50px rgba(255, 255, 255, 0.1)',
       }
     },
   },

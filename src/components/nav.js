@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -6,6 +6,8 @@ import logo from "../assets/shared/logo.svg";
 import hamburgerIcon from "../assets/shared/icon-hamburger.svg";
 
 export default function Nav({ setShowNavbar }) {
+  const [hoverNav, setHoverNav] = useState("");
+
   const navs = [
     { path: "/", name: "home" },
     { path: "/destinations", name: "destination" },
@@ -32,6 +34,8 @@ export default function Nav({ setShowNavbar }) {
             <Link
               to={link.path}
               className="flex items-center gap-x-3 uppercase"
+              onMouseEnter={() => setHoverNav(link.path)}
+              onMouseLeave={() => setHoverNav("")}
             >
               <span
                 className={`font-bold ${i === 0 ? "lg:inline hidden" : ""}`}
@@ -41,9 +45,16 @@ export default function Nav({ setShowNavbar }) {
               <span>{link.name}</span>
             </Link>
             <motion.div
-              className="mt-9 bg-white h-0.5"
+              className={`mt-9 ${
+                link.path === location.pathname ? "bg-white" : "bg-white/50"
+              } h-0.5`}
               initial={{ width: 0 }}
-              animate={{ width: link.path === location.pathname ? "100%" : 0 }}
+              animate={{
+                width:
+                  link.path === location.pathname || link.path === hoverNav
+                    ? "100%"
+                    : 0,
+              }}
               transition={{ duration: 0.5 }}
             />
           </li>
