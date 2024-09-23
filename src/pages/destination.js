@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { ReactTyped } from "react-typed";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
+import PageHeader from "../components/pageHeader";
 
 export default function Destination({ destinationData }) {
   const [activeDest, setActiveDest] = useState("Moon");
@@ -13,17 +13,9 @@ export default function Destination({ destinationData }) {
   }, []);
 
   return (
-    <main className="lg:bg-destbg-desktop md:bg-destbg-tablet bg-destbg-mobile pb-12 text-white bg-no-repeat bg-cover lg:bg-center h-full overflow-y-auto w-full font-barlowCondensed">
+    <main className="lg:bg-destbg-desktop md:bg-destbg-tablet bg-destbg-mobile pb-12 text-white bg-no-repeat bg-cover lg:bg-center min-h-screen w-full font-barlowCondensed">
       <section className="lg:pt-48 md:pt-36 pt-28 2xl:px-40 xl:px-32 lg:px-20 sm:px-10 px-6">
-        <div className="lg:text-3xl sm:text-xl text-base uppercase mb-6 flex flex-row sm:justify-start justify-center lg:gap-x-4 gap-x-6 tracking-widee">
-          <span className="font-bold tracking-[0.295em] text-white/25">01</span>{" "}
-          <ReactTyped
-            strings={["Pick your destination"]}
-            typeSpeed={50}
-            startDelay={100}
-            showCursor={false}
-          />
-        </div>
+        <PageHeader no="01" content="pick your destination" speed={30} />
         {destinationData &&
           destinationData.map((dest, i) => (
             <article
@@ -39,7 +31,7 @@ export default function Destination({ destinationData }) {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{
-                      delay: isFirstRender ? 1.6 : 0,
+                      delay: isFirstRender ? 1.4 : 0,
                       duration: 0.7,
                       ease: "easeIn",
                     }}
@@ -53,7 +45,7 @@ export default function Destination({ destinationData }) {
                 <motion.ul
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ delay: 1.6, duration: 0.7, ease: "easeIn" }}
+                  transition={{ delay: 1.4, duration: 0.7, ease: "easeIn" }}
                   className="flex flex-row gap-x-8 items-center lg:justify-start justify-center lg:mb-10 mb-6"
                 >
                   {destinationData &&
@@ -95,7 +87,7 @@ export default function Destination({ destinationData }) {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{
-                    delay: isFirstRender ? 1.9 : 0,
+                    delay: isFirstRender ? 1.6 : 0,
                     duration: 0.7,
                     ease: "easeIn",
                   }}
@@ -108,7 +100,7 @@ export default function Destination({ destinationData }) {
                     initial={{ opacity: 0, y: 100 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
-                      delay: isFirstRender ? 2 : 0,
+                      delay: isFirstRender ? 1.8 : 0,
                       duration: 0.7,
                       ease: "easeIn",
                     }}
@@ -132,7 +124,7 @@ export default function Destination({ destinationData }) {
                             className="uppercase text-3xl font-bellefair"
                             start={0}
                             end={parseFloat(dest.distance.replace(/,/g, ""))}
-                            suffix={dest.name === 'Moon' ? ' km' : ' mil. km'}
+                            suffix={dest.name === "Moon" ? " km" : " mil. km"}
                             duration={3}
                             separator=","
                             decimal=","

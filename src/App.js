@@ -14,15 +14,29 @@ function App() {
   useEffect(() => {
     const getDataFunction = async () => {
       const response = await fetch(
-        "https://space-tourism-website-vert-iota.vercel.app/data.json"
+        "https://cors-anywhere.herokuapp.com/https://firebasestorage.googleapis.com/v0/b/fir-9-tutorial-fe4c7.appspot.com/o/data.json?alt=media&token=b4435724-7c3c-4b76-8bef-5e90277b0ee0"
       );
       const data = response.json();
+      console.log(data);
       data
         .then((realData) => setAllDatas(realData))
         .catch((error) => console.log(error));
     };
+
+    const getSecondDataFunction = async () => {
+      const response = await fetch(
+        "https://cors-anywhere.herokuapp.com/https://res.cloudinary.com/dmlrqezyo/raw/upload/v1727103735/data_gin003.json"
+      );
+      const data = response.json();
+      console.log(data);
+      data
+        .then((realData) => console.log(realData))
+        .catch((error) => console.log(error));
+    };
+
     return () => {
       getDataFunction();
+      getSecondDataFunction();
     };
   }, []);
 

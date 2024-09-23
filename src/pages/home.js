@@ -26,7 +26,7 @@ export default function Home() {
       initial="hidden"
       animate="visible"
       variants={variants}
-      className="lg:bg-homebg-desktop md:bg-homebg-tablet bg-homebg-mobile lg:pb-32 text-white bg-no-repeat bg-cover bg-center h-full overflow-y-auto w-full lg:flex flex-col items-center justify-end"
+      className="lg:bg-homebg-desktop md:bg-homebg-tablet bg-homebg-mobile lg:pb-32 text-white bg-no-repeat bg-cover bg-center min-h-screen w-full lg:flex flex-col items-center justify-end"
     >
       <section className="flex lg:flex-row flex-col items-center md:justify-between justify-center h-full lg:gap-y-0 md:gap-y-16 gap-y-32 2xl:ps-32 xl:ps-24 sm:ps-10 ps-7 2xl:pe-20 sm:pe-10 pe-7 lg:pt-44 md:pt-0 sm:pt-32 pt-16 lg:mt-0">
         <div className="lg:basis-1/2 lg:text-start text-center lg:w-1/2 md:w-3/4 w-auto lg:pt-44 sm:pt-56 pt-40 xl:mb-0 sm:mb-6">
