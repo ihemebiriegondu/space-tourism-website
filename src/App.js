@@ -14,7 +14,14 @@ function App() {
   useEffect(() => {
     const getDataFunction = async () => {
       const response = await fetch(
-        "https://res.cloudinary.com/dmlrqezyo/raw/upload/v1727022552/data_zmy3rz.json"
+        "https://res.cloudinary.com/dmlrqezyo/raw/upload/v1727103735/data_gin003.json",
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          method: "GET",
+        }
       );
       const data = response.json();
       data
@@ -32,7 +39,12 @@ function App() {
       <MobileOffcanvas showNavbar={showNavbar} setShowNavbar={setShowNavbar} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/destinations" element={<Destination destinationData={allDatas && allDatas.destinations} />} />
+        <Route
+          path="/destinations"
+          element={
+            <Destination destinationData={allDatas && allDatas.destinations} />
+          }
+        />
         <Route path="/crew" element={<Crew />} />
         <Route path="/technology" element={<Tech />} />
       </Routes>
