@@ -13,9 +13,9 @@ export default function Destination({ destinationData }) {
   }, []);
 
   return (
-    <main className="lg:bg-destbg-desktop md:bg-destbg-tablet bg-destbg-mobile pb-12 text-white bg-no-repeat bg-cover h-full overflow-y-auto w-full font-barlowCondensed">
-      <section className="pt-48 px-40">
-        <div className="text-3xl uppercase mb-6 flex flex-row w-fit gap-x-4 tracking-widee">
+    <main className="lg:bg-destbg-desktop md:bg-destbg-tablet bg-destbg-mobile pb-12 text-white bg-no-repeat bg-cover lg:bg-center h-full overflow-y-auto w-full font-barlowCondensed">
+      <section className="lg:pt-48 md:pt-36 pt-28 2xl:px-40 xl:px-32 lg:px-20 sm:px-10 px-6">
+        <div className="lg:text-3xl sm:text-xl text-base uppercase mb-6 flex flex-row sm:justify-start justify-center lg:gap-x-4 gap-x-6 tracking-widee">
           <span className="font-bold tracking-[0.295em] text-white/25">01</span>{" "}
           <ReactTyped
             strings={["Pick your destination"]}
@@ -29,11 +29,11 @@ export default function Destination({ destinationData }) {
             <article
               className={`${
                 dest.name === activeDest ? "flex" : "hidden"
-              } flex-row py-32`}
+              } lg:flex-row flex-col lg:py-32 lg:gap-y-0 gap-y-8`}
               key={i}
             >
-              <div className="basis-1/2">
-                <div className="w-[480px] h-[480px]">
+              <div className="lg:basis-1/2 lg:py-0 sm:py-10 py-7 lg:w-1/2 w-full lg:block flex flex-row justify-center">
+                <div className="xl:w-[480px] lg:w-96 sm:w-80 w-40 xl:h-[480px] lg:w-96 sm:w-80 w-40">
                   <motion.img
                     key={activeDest}
                     initial={{ opacity: 0 }}
@@ -49,18 +49,18 @@ export default function Destination({ destinationData }) {
                   />
                 </div>
               </div>
-              <aside className="basis-1/2">
+              <aside className="basis-1/2 lg:w-1/2 sm:w-3/4 w-full lg:mx-0 mx-auto">
                 <motion.ul
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1.6, duration: 0.7, ease: "easeIn" }}
-                  className="flex flex-row gap-x-8 items-center mb-10"
+                  className="flex flex-row gap-x-8 items-center lg:justify-start justify-center lg:mb-10 mb-6"
                 >
                   {destinationData &&
                     destinationData.map((links, i) => (
                       <li className="flex flex-col items-center" key={i}>
                         <span
-                          className={`text-base uppercase tracking-widestt mb-2 inline-block ${
+                          className={`sm:text-base text-sm uppercase tracking-widestt mb-2 inline-block ${
                             activeDest === links.name
                               ? "text-white"
                               : "text-secondary"
@@ -81,7 +81,7 @@ export default function Destination({ destinationData }) {
                                 : 0,
                           }}
                           transition={{ duration: 0.5 }}
-                          className={`w-full h-1 ${
+                          className={`w-full lg:h-1 h-0.5 ${
                             activeDest === links.name
                               ? "bg-white"
                               : "bg-white/50"
@@ -99,9 +99,9 @@ export default function Destination({ destinationData }) {
                     duration: 0.7,
                     ease: "easeIn",
                   }}
-                  className=""
+                  className="lg:text-start text-center"
                 >
-                  <h1 className="text-8xl uppercase font-bellefair mb-4">
+                  <h1 className="lg:text-8xl sm:text-7.5xl text-6xl uppercase font-bellefair lg:mb-4 mb-2">
                     {dest.name}
                   </h1>
                   <motion.div
@@ -113,11 +113,11 @@ export default function Destination({ destinationData }) {
                       ease: "easeIn",
                     }}
                   >
-                    <p className="font-barlow lg:text-lg sm:text-base text-sbase tracking-normal sm:leading-9 leading-7 text-secondary mb-10">
+                    <p className="font-barlow lg:text-lg sm:text-base text-sbase tracking-normal sm:leading-9 leading-7 text-secondary lg:mb-10 mb-6">
                       {dest.description}
                     </p>
-                    <div className="mb-10 w-full h-px bg-white/25"></div>
-                    <div className="flex flex-row gap-x-6">
+                    <div className="lg:mb-10 mb-6 w-full h-px bg-white/25"></div>
+                    <div className="flex sm:flex-row flex-col items-center gap-6">
                       <div className="flex flex-col gap-y-3 basis-1/2">
                         <p className="uppercase text-secondary text-sm tracking-widestt">
                           AVG. DISTANCE
