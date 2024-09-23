@@ -12,43 +12,17 @@ function App() {
   const [allDatas, setAllDatas] = useState([]);
 
   useEffect(() => {
-    const getQuestionstwo = async () => {
-      let questionstwo;
-      questionstwo = await fetch(
-        "https://questions.aloc.com.ng/api/v2/q/20?subject=Mathematics",
-        {
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-            AccessToken: "QB-4574212e169b8f95e68a",
-          },
-          method: "GET",
-        }
-      ).catch((err) => console.log(err));
-      const quesJSONtwo = await questionstwo.json();
-      console.log(quesJSONtwo)
-    };
-
     const getDataFunction = async () => {
       const response = await fetch(
-        "https://res.cloudinary.com/dmlrqezyo/raw/upload/v1727103735/data_gin003.json",
-        {
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          method: "GET",
-        }
+        "/data.json"
       );
       const data = response.json();
-      console.log(response);
       data
         .then((realData) => setAllDatas(realData))
         .catch((error) => console.log(error));
     };
     return () => {
       getDataFunction();
-      getQuestionstwo()
     };
   }, []);
 
