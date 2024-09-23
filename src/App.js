@@ -24,6 +24,7 @@ function App() {
         }
       );
       const data = response.json();
+      console.log(response)
       data
         .then((realData) => setAllDatas(realData))
         .catch((error) => console.log(error));
