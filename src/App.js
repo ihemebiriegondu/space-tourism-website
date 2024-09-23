@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     const getDataFunction = async () => {
       const response = await fetch(
-        "/data.json"
+        "https://space-tourism-website-vert-iota.vercel.app/data.json"
       );
       const data = response.json();
       data
