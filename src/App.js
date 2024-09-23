@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Nav from "./components/nav";
 import MobileOffcanvas from "./components/mobileOffcanvas";
-import Home from "./home";
-import Destination from "./destination";
-import Crew from "./crew";
-import Tech from "./tech";
+import Home from "./pages/home";
+import Destination from "./pages/destination";
+import Crew from "./pages/crew";
+import Tech from "./pages/tech";
 
 function App() {
   const [showNavbar, setShowNavbar] = useState(false);

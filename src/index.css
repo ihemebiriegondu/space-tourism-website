@@ -17,3 +17,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #0b0d17;
 }
+
+.pers {
+  perspective: 1000px;
+}
+
+.pers .img {
+  transform-style: preserve-3d;
+  animation: rotate 20s infinite linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  } to {
+    transform: rotate(360deg);
+  }
+}

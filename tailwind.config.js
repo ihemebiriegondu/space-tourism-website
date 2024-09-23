@@ -41,6 +41,9 @@ module.exports = {
       boxShadow: {
         'bigExplore': '0 0 0 90px rgba(255, 255, 255, 0.1)',
         'smallExplore': '0 0 0 50px rgba(255, 255, 255, 0.1)',
+      },
+      animation: {
+        'spin-slow': 'spin 20s linear infinite',
       }
     },
   },
