@@ -43,7 +43,7 @@ export default function Crew({ crewData }) {
                   <motion.h2
                     initial={{ opacity: 0, y: 100 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, delay: isFirstRender ? 1 : 0 }}
+                    transition={{ duration: 0.7, delay: 1 }}
                     className="min-[1331px]:text-6xl lg:text-5xl sm:text-4xl text-2xl uppercase mb-6"
                   >
                     {crew.name}
@@ -51,21 +51,18 @@ export default function Crew({ crewData }) {
                   <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{
-                      duration: 0.7,
-                      delay: isFirstRender ? 1.2 : 0,
-                    }}
+                    transition={{ duration: 0.7, delay: 1.2 }}
                     className="font-barlow lg:text-lg sm:text-base text-sbase tracking-normal sm:leading-9 leading-7 text-secondary"
                   >
                     {crew.bio}
                   </motion.p>
                 </div>
-                <div className="pb-12 flex flex-row gap-x-10">
+                <div className="pb-12 flex flex-row lg:gap-x-10 gap-x-4 lg:justify-start justify-center">
                   {crewData &&
                     crewData.map((links, i) => (
                       <span
                         key={i}
-                        className={`inline-block w-4 h-4 rounded-full cursor-pointer transition-all duration-300 ease-in ${
+                        className={`inline-block lg:w-4 lg:h-4 w-2.5 h-2.5 rounded-full cursor-pointer transition-all duration-300 ease-in ${
                           links.role === activeCrew
                             ? "bg-white"
                             : "bg-white/20 hover:bg-white/50"
@@ -80,7 +77,7 @@ export default function Crew({ crewData }) {
                   key={activeCrew}
                   initial={{ opacity: 0, x: 100 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.7, delay: isFirstRender ? 1 : 0 }}
+                  transition={{ duration: 0.7, delay: 1 }}
                   className="lg:h-[676px] md:h-[463px] h-[350px] w-full"
                 >
                   <img
