@@ -15,7 +15,7 @@ export default function Destination({ destinationData }) {
   return (
     <main className="lg:bg-destbg-desktop md:bg-destbg-tablet bg-destbg-mobile pb-12 text-white bg-no-repeat bg-cover lg:bg-center min-h-screen w-full font-barlowCondensed">
       <section className="lg:pt-48 md:pt-36 pt-28 2xl:px-40 xl:px-32 lg:px-20 sm:px-10 px-6">
-        <PageHeader no="01" content="pick your destination" speed={30} />
+        <PageHeader no="01" content="pick your destination" />
         {destinationData &&
           destinationData.map((dest, i) => (
             <article
