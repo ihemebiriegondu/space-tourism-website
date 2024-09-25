@@ -40,7 +40,7 @@ function App() {
           path="/destinations"
           element={<Destination destinationData={data && data.destinations} />}
         />
-        <Route path="/crew" element={<Crew />} />
+        <Route path="/crew" element={<Crew crewData={data && data.crew} />} />
         <Route path="/technology" element={<Tech />} />
       </Routes>
     </BrowserRouter>
