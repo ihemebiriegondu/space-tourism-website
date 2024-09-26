@@ -29,8 +29,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/space-tourism-website---reactjs-0ilC0QBEQ-)
-- Live Site URL: [Add live site URL here](https://space-tourism-website-vert-iota.vercel.app/)
+- Solution URL: (https://www.frontendmentor.io/solutions/space-tourism-website---reactjs-0ilC0QBEQ-)
+- Live Site URL: (https://space-tourism-website-vert-iota.vercel.app/)
 
 ## My process
 
