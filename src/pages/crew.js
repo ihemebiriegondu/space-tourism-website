@@ -10,9 +10,8 @@ export default function Crew({ crewData }) {
     setIsFirstRender(false);
   }, []);
 
-  console.log(crewData);
   return (
-    <main className="lg:bg-crewbg-desktop md:bg-crewbg-tablet bg-crewbg-mobile lg:pb-12 text-white bg-no-repeat bg-cover lg:bg-center min-h-screen w-full font-barlowCondensed">
+    <main className="lg:bg-crewbg-desktop md:bg-crewbg-tablet bg-crewbg-mobile lg:pb-12 text-white bg-no-repeat bg-cover lg:bg-center min-h-screen w-full font-barlowCondensed overflow-x-hidden">
       <section className="lg:pt-48 md:pt-36 pt-28 2xl:px-40 xl:px-32 lg:px-16 sm:px-10 px-6">
         <PageHeader no={"02"} content={"MEET YOUR CREW"} />
 
@@ -20,7 +19,7 @@ export default function Crew({ crewData }) {
           crewData.map((crew, i) => (
             <article
               key={i}
-              className={`font-bellefair flex lg:flex-row flex-col gap-x-8 lg:w-full md:w-3/4 lg:mx-0 mx-auto ${
+              className={`font-bellefair lg:flex-row flex-col gap-x-8 lg:w-full md:w-3/4 lg:mx-0 mx-auto ${
                 activeCrew === crew.role ? "flex" : "hidden"
               }`}
             >
@@ -43,7 +42,10 @@ export default function Crew({ crewData }) {
                   <motion.h2
                     initial={{ opacity: 0, y: 100 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, delay: 1 }}
+                    transition={{
+                      duration: 0.7,
+                      delay: isFirstRender ? 1 : 0.2,
+                    }}
                     className="min-[1331px]:text-6xl lg:text-5xl sm:text-4xl text-2xl uppercase mb-6"
                   >
                     {crew.name}
@@ -51,13 +53,24 @@ export default function Crew({ crewData }) {
                   <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ duration: 0.7, delay: 1.2 }}
+                    transition={{
+                      duration: 0.7,
+                      delay: isFirstRender ? 1.5 : 0.5,
+                    }}
                     className="font-barlow lg:text-lg sm:text-base text-sbase tracking-normal sm:leading-9 leading-7 text-secondary"
                   >
                     {crew.bio}
                   </motion.p>
                 </div>
-                <div className="pb-12 flex flex-row lg:gap-x-10 gap-x-4 lg:justify-start justify-center">
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{
+                    duration: 0.7,
+                    delay: isFirstRender ? 1.5 : 0,
+                  }}
+                  className="pb-12 flex flex-row lg:gap-x-10 gap-x-4 lg:justify-start justify-center"
+                >
                   {crewData &&
                     crewData.map((links, i) => (
                       <span
@@ -70,14 +83,14 @@ export default function Crew({ crewData }) {
                         onClick={() => setActiveCrew(links.role)}
                       ></span>
                     ))}
-                </div>
+                </motion.div>
               </div>
               <div className="lg:basis-1/2 h-full lg:text-end text-center relative lg:mt-auto">
                 <motion.div
                   key={activeCrew}
                   initial={{ opacity: 0, x: 100 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.7, delay: 1 }}
+                  transition={{ duration: 0.7, delay: isFirstRender ? 1 : 0.5 }}
                   className="lg:h-[676px] md:h-[463px] h-[350px] w-full"
                 >
                   <img

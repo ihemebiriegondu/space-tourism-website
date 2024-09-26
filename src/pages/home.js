@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const variants = {
@@ -44,11 +45,14 @@ export default function Home() {
           </p>
         </div>
         <div className="lg:basis-1/2 flex flex-row justify-end lg:pb-0 sm:pb-28 pb-16 lg:pt-44 sm:pt-12 pt-4 lg:pe-20 pe-0">
-          <div className="bg-white sm:h-72 h-36 sm:w-72 w-36 flex flex-col justify-center text-center rounded-full sm:hover:shadow-bigExplore hover:shadow-smallExplore transition-shadow duration-400">
-            <p className="uppercase font-bellefair sm:text-[2em] text-lg leading-normal tracking-normal text-primary">
+          <Link
+            to={"/destinations"}
+            className="cursor-pointer group bg-white sm:h-72 h-36 sm:w-72 w-36 flex flex-col justify-center text-center rounded-full sm:hover:shadow-bigExplore hover:shadow-smallExplore transition-shadow duration-400"
+          >
+            <span className="uppercase font-bellefair sm:text-[2em] text-lg leading-normal tracking-normal text-primary group-hover:text-primary/70">
               EXPLORE
-            </p>
-          </div>
+            </span>
+          </Link>
         </div>
       </section>
     </motion.main>

@@ -41,7 +41,7 @@ function App() {
           element={<Destination destinationData={data && data.destinations} />}
         />
         <Route path="/crew" element={<Crew crewData={data && data.crew} />} />
-        <Route path="/technology" element={<Tech />} />
+        <Route path="/technology" element={<Tech techData={data && data.technology} />} />
       </Routes>
     </BrowserRouter>
   );
