@@ -99,7 +99,6 @@ export default function Crew({ crewData }) {
                     className="h-full w-full object-contain"
                   />
                 </motion.div>
-                {/* <div className="absolute bottom-0 h-1/2 w-full bg-gradient-to-t from-primary from-5% via-primary/5 via-15% to-primary/0 to-80%"></div> */}
               </div>
             </article>
           ))}
